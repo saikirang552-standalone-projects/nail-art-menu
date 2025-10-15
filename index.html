@@ -3,231 +3,149 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nail Affair — QR Menu</title>
-  <meta name="description" content="Nail Affair QR menu — view services, prices, and quickly open Instagram & Google review page." />
+  <title>Ombre - The Nail Bar 💅✨</title>
   <style>
-    /* Reset + base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; -webkit-font-smoothing:antialiased; color:#111}
-
-    /* Background */
-    body{
-      background: radial-gradient(600px 400px at 10% 10%, #ffd6f0 0%, rgba(255,214,240,0) 20%),
-                  radial-gradient(600px 400px at 90% 90%, #d8f0ff 0%, rgba(216,240,255,0) 20%),
-                  linear-gradient(180deg,#fff 0%,#fff4fb 100%);
-      min-height:100vh;
-      display:flex;align-items:center;justify-content:center;padding:24px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #ff99cc, #ffccff, #ffe6f2, #ffb3d9);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
     }
 
-    /* Card */
-    .card{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));border-radius:20px;box-shadow:0 20px 50px rgba(15,15,30,0.12);overflow:hidden;border:1px solid rgba(0,0,0,0.03);display:grid;grid-template-columns:1fr 360px}
-
-    /* Left - menu */
-    .menu{padding:28px 32px}
-    .brand{display:flex;gap:16px;align-items:center}
-    .logo{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff9ad9,#ffd6f0);box-shadow:0 6px 18px rgba(255,154,210,0.18);font-weight:700;color:#7a163a}
-    h1{font-size:20px;margin-bottom:4px}
-    p.tag{color:#6b6b83;font-size:13px;margin-bottom:18px}
-
-    .services{display:grid;gap:12px}
-    .service{display:flex;align-items:center;justify-content:space-between;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));border:1px solid rgba(10,10,30,0.03)}
-    .service .left{display:flex;gap:12px;align-items:center}
-    .swatch{width:46px;height:46;border-radius:10px;background:linear-gradient(135deg,#fff,#f6f6ff);display:flex;align-items:center;justify-content:center;font-weight:600;color:#7a163a}
-    .svc-title{font-weight:600}
-    .svc-sub{font-size:13px;color:#666;margin-top:4px}
-    .price{font-weight:700}
-
-    .actions{display:flex;gap:8px;margin-top:12px}
-    .btn{padding:10px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn.primary{background:linear-gradient(90deg,#ff8acb,#ff5ba6);color:white;box-shadow:0 8px 20px rgba(255,90,160,0.18)}
-    .btn.ghost{background:transparent;border:1px solid rgba(10,10,30,0.06)}
-
-    /* Right - QR + visuals */
-    .qr-panel{padding:28px 24px;background:linear-gradient(180deg, rgba(250,246,255,0.6), rgba(255,255,255,0.45));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
-    .qr-box{background:white;padding:14px;border-radius:14px;box-shadow:0 8px 30px rgba(20,20,60,0.06);display:flex;flex-direction:column;align-items:center}
-    #qrcode{width:220px;height:220px}
-    .instructions{font-size:13px;color:#666;text-align:center}
-    .nail-hero{width:100%;display:flex;gap:10px;align-items:center;justify-content:center;margin-top:6px}
-
-    /* small screens */
-    @media (max-width:880px){
-      .card{grid-template-columns:1fr;}
-      .qr-panel{order:-1}
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* subtle animations */
-    .service:hover{transform:translateY(-4px);transition:all .18s ease}
-    .logo, .swatch{transition:transform .25s ease}
-    .logo:hover,.swatch:hover{transform:translateY(-4px)}
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+      color: #fff0f5;
+      letter-spacing: 1px;
+    }
 
-    footer.note{font-size:12px;color:#666;padding:14px;text-align:center}
+    .services {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 20px 30px;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      max-width: 400px;
+      margin-bottom: 25px;
+    }
 
-    /* Tiny decorative nails (SVG container) */\    
-    .nail{width:56px;height:86px;background:linear-gradient(180deg,#fff,#ffeef8);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(250,200,230,0.12)}
+    .services h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #fff;
+      text-shadow: 0 0 8px #ffb3ec;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+      color: #fff5fa;
+    }
+
+    .contact {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 18px 24px;
+      border-radius: 16px;
+      max-width: 420px;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      line-height: 1.6rem;
+    }
+
+    .btn {
+      margin-top: 30px;
+      background: linear-gradient(90deg, #ff66b2, #ff99cc, #ff66ff);
+      border: none;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 182, 255, 0.6);
+      text-shadow: 0 0 10px #fff;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 182, 255, 1);
+    }
+
+    .glitter {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: sparkle 3s infinite ease-in-out;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
   </style>
 </head>
 <body>
-  <div class="card" role="application">
-    <section class="menu">
-      <div class="brand">
-        <div class="logo">NA</div>
-        <div>
-          <h1>Nail Affair</h1>
-          <p class="tag">Quick menu • Scan for prices • Tap 'Service Done' after your appointment</p>
-        </div>
-      </div>
-
-      <div style="margin-top:18px" class="services" id="servicesList">
-        <!-- services inserted by JS -->
-      </div>
-
-      <div class="actions">
-        <button class="btn primary" id="saveQRBtn">Save QR (for print)</button>
-        <button class="btn ghost" id="printBtn">Print</button>
-      </div>
-
-      <footer class="note">Tip: Scan this QR with your phone camera. It opens this menu and lets you leave a review & follow our Instagram.</footer>
-    </section>
-
-    <aside class="qr-panel">
-      <div class="qr-box">
-        <div id="qrcode"></div>
-        <div class="instructions">Scan to open this menu<br><small style="color:#888">or visit: <span id="shortUrl">(this page)</span></small></div>
-      </div>
-
-      <div class="nail-hero" aria-hidden="true">
-        <div class="nail">💅</div>
-        <div class="nail">✨</div>
-        <div class="nail">🌸</div>
-      </div>
-
-      <div style="width:100%;text-align:center;margin-top:6px">
-        <small style="color:#666">When a service is finished, tap <em>Service Done</em> to open our Instagram & Google review page.</small>
-      </div>
-    </aside>
+  <h1>💅✨ Ombre - The Nail Bar ✨💅</h1>
+  
+  <div class="services">
+    <h2>Our Services 💖</h2>
+    <ul>
+      <li>💅 Basic Manicure - ₹350</li>
+      <li>🌸 Gel Polish - ₹700</li>
+      <li>💫 Nail Art (per hand) - ₹500</li>
+      <li>🌈 Nail Extensions - ₹2200</li>
+      <li>💎 Refill - ₹900</li>
+    </ul>
   </div>
 
-  <!-- Modal -->
-  <div id="modal" style="display:none;position:fixed;inset:0;background:rgba(8,10,20,0.45);align-items:center;justify-content:center;padding:28px">
-    <div style="background:white;padding:20px;border-radius:12px;max-width:520px;width:100%;box-shadow:0 20px 60px rgba(10,10,30,0.2)">
-      <h3 id="modalTitle">Thank you!</h3>
-      <p id="modalBody">Open links below to follow & leave a review.</p>
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <a id="openInsta" class="btn primary" style="text-decoration:none;display:inline-flex;align-items:center;">Open Instagram</a>
-        <a id="openGoogle" class="btn ghost" style="text-decoration:none;display:inline-flex;align-items:center;">Open Google Reviews</a>
-        <a id="smsLink" class="btn" style="background:transparent;border:1px solid rgba(10,10,30,0.06);text-decoration:none;">Send SMS</a>
-      </div>
-      <div style="text-align:right;margin-top:12px">
-        <button id="closeModal" class="btn ghost">Close</button>
-      </div>
-    </div>
+  <div class="contact">
+    📍 <strong>Address:</strong><br>
+    3rd floor, Road no 14, Opp. SBI Bank, Venkat Nagar,<br>
+    Banjara Hills, Hyderabad, Telangana, 500034<br><br>
+    ☎️ <strong>Contact:</strong> 08008787802<br>
+    📸 <strong>Instagram:</strong> <a href="https://instagram.com/ombre_thenailbar" style="color:#fff;text-decoration:underline;">@ombre_thenailbar</a><br><br>
+    🌟 <strong>Review here:</strong><br>
+    <a href="https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=853236ac3d6bce34&q=ombre-the+nail+bar+reviews&uds=AOm0WdHo3GK-IOO1Ns_IroxI67sRPiyW8KJdO66k0DLKccoCk_lx3M_R_7ObloASf_yXXb7-3PhoVBESGA7gORrcmOfH1sgtYwtgui_d9qKB9UuMCokKzL3VzD0fU9SMssohOUBwRTj_YqB3rsrafm1euNMyvWEQPkNbdSGUcMW0BX0o-98UxtHoxUW0jGOh5soQiq7-yakoTFx9ggs03cTeakvFkNWo3dFe8vX5SA7Az58FJ8oTqhvMETqDS9BnTfRiqwaJo9pJDHbB2mEc9gx-lFno17QU_pkKBDQH4P3FZsLPLl1yBwMl7xmFY3_DBxP9hB5Od9W-Ywz5Z206dFVrbW57CFAMT-KcimE3hNFK6alS5QkhisITvgERS6RsaOMmuzGzH1EboVQaRhJA4UAgXaFJRRCBOad9vA3zjzPElsQthJnS1c8SDq_CVEA6d-v4NhM2bc6vDEjEE82XQlBp8fop5p4TMw&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GAtVtgPfBX-JohHACIC5fRsM_GJ6xF1HyCOMhwlsjCGdPJY8ptGaF8bPPiqP6_NOGHRDS1qKGLeQoI9Xd-qKgu9E_bYiHHkzMaWdGigXJfzv8Chw%3D%3D&sa=X&ved=2ahUKEwiytNKG3aaQAxVdyzgGHWGtJTsQk8gLegQIHhAB&ictx=1&stq=1&cs=0&lei=CdrvaKCMFOScg8UP-t7vkQw#ebo=4" target="_blank" style="color:#fff;text-decoration:underline;">Click to Review 💫</a>
   </div>
 
-  <!-- QRCode.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <button class="btn" onclick="showMessage()">✨ Service Done ✨</button>
+
   <script>
-    /* ============ Configuration ============ */
-    // Replace these with the salon's real handles / urls
-    const CONFIG = {
-      salonName: 'Nail Affair',
-      instagram: 'https://instagram.com/your_insta_here',
-      googleReview: 'https://www.google.com/search?q=nail+affair+reviews',
-      smsTemplate: 'Thank you for visiting Nail Affair! Please follow our Insta @your_insta_here and leave a review: ' // sms body appended with googleReview
-    };
-
-    /* Service list: edit as needed */
-    const SERVICES = [
-      {id:'basic-manicure', title:'Basic Manicure', desc:'Trim + shape + polish', price:'₹350'},
-      {id:'gel-manicure', title:'Gel Manicure', desc:'Long-lasting gel polish', price:'₹700'},
-      {id:'nail-art', title:'Nail Art (single hand)', desc:'Custom art (one hand)', price:'₹450'},
-      {id:'nail-extensions', title:'Extensions', desc:'Acrylic/PolyGel set', price:'₹2200'},
-      {id:'refill', title:'Refill', desc:'Extensions refill', price:'₹900'}
-    ];
-
-    /* ============ Render services ============ */
-    const servicesList = document.getElementById('servicesList');
-    SERVICES.forEach(s => {
-      const el = document.createElement('div');
-      el.className = 'service';
-      el.innerHTML = `
-        <div class="left">
-          <div class="swatch">${s.title.split(' ').slice(0,2).map(w=>w[0]).join('')}</div>
-          <div>
-            <div class="svc-title">${s.title}</div>
-            <div class="svc-sub">${s.desc}</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
-          <div class="price">${s.price}</div>
-          <div style="display:flex;gap:8px">
-            <button class="btn primary doneBtn" data-svc="${s.id}">Service Done</button>
-            <button class="btn ghost" onclick="alert('Booked: ${s.title} — call or use booking system')">Book</button>
-          </div>
-        </div>
-      `;
-      servicesList.appendChild(el);
-    });
-
-    /* ============ QR generation ============ */
-    const qrcodeEl = document.getElementById('qrcode');
-    const pageUrl = location.href;
-    const qrcode = new QRCode(qrcodeEl, {text: pageUrl, width:220, height:220, colorDark:'#222', colorLight:'#fff', correctLevel: QRCode.CorrectLevel.H});
-    document.getElementById('shortUrl').textContent = pageUrl;
-
-    document.getElementById('saveQRBtn').addEventListener('click', ()=>{
-      // find the canvas or img inside qrcodeEl and trigger download
-      const img = qrcodeEl.querySelector('img');
-      if(img){
-        const link = document.createElement('a');link.href = img.src;link.download = 'nail-affair-qr.png';link.click();
-      } else {
-        // older browsers: QRCode.js renders table; render to canvas then convert
-        alert('Right click the QR and save image, or use Print -> Save as PDF for high quality.');
-      }
-    });
-
-    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
-
-    /* ============ Service Done flow ============ */
-    const modal = document.getElementById('modal');
-    const openInsta = document.getElementById('openInsta');
-    const openGoogle = document.getElementById('openGoogle');
-    const smsLink = document.getElementById('smsLink');
-
-    // Attach handlers to each 'Service Done' button
-    document.querySelectorAll('.doneBtn').forEach(btn => btn.addEventListener('click', (e)=>{
-      const svcId = e.currentTarget.dataset.svc;
-      showDoneModal(svcId);
-    }));
-
-    function showDoneModal(svcId){
-      const svc = SERVICES.find(s=>s.id===svcId) || {title:'Service'};
-      document.getElementById('modalTitle').textContent = `Thanks for choosing ${svc.title}!`;
-      document.getElementById('modalBody').textContent = 'Please follow us on Instagram and consider leaving a Google review.';
-
-      // populate links
-      openInsta.href = CONFIG.instagram; openInsta.target = '_blank';
-      openGoogle.href = CONFIG.googleReview; openGoogle.target = '_blank';
-
-      // sms: try to open sms composer with prefilled body
-      const smsBody = encodeURIComponent(CONFIG.smsTemplate + '\n' + CONFIG.googleReview);
-      // Use platform-agnostic approach
-      const isIOS = /iP(hone|od|ad)/.test(navigator.userAgent);
-      smsLink.href = `sms:${isIOS ? '' : ''}?&body=${smsBody}`;
-      smsLink.target = '_blank';
-
-      modal.style.display = 'flex';
+    // Floating glitter effect
+    for (let i = 0; i < 40; i++) {
+      const glitter = document.createElement('div');
+      glitter.classList.add('glitter');
+      glitter.style.left = Math.random() * 100 + 'vw';
+      glitter.style.top = Math.random() * 100 + 'vh';
+      glitter.style.animationDuration = 2 + Math.random() * 3 + 's';
+      document.body.appendChild(glitter);
     }
 
-    document.getElementById('closeModal').addEventListener('click',()=>modal.style.display='none');
-
-    // Close modal when clicking backdrop
-    modal.addEventListener('click', (ev)=>{ if(ev.target===modal) modal.style.display='none' });
-
-    /* ============ Utility: customize quickly ============ */
-    // Expose small API for quick customization in browser console (optional)
-    window.NAIL_AFFAIR = {CONFIG, SERVICES};
-
+    function showMessage() {
+      alert('💅 Thank you for visiting Ombre - The Nail Bar! ✨\nFollow us on Instagram @ombre_thenailbar and leave a review 💖');
+      window.open('https://instagram.com/ombre_thenailbar', '_blank');
+      window.open('https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=853236ac3d6bce34&q=ombre-the+nail+bar+reviews&uds=AOm0WdHo3GK-IOO1Ns_IroxI67sRPiyW8KJdO66k0DLKccoCk_lx3M_R_7ObloASf_yXXb7-3PhoVBESGA7gORrcmOfH1sgtYwtgui_d9qKB9UuMCokKzL3VzD0fU9SMssohOUBwRTj_YqB3rsrafm1euNMyvWEQPkNbdSGUcMW0BX0o-98UxtHoxUW0jGOh5soQiq7-yakoTFx9ggs03cTeakvFkNWo3dFe8vX5SA7Az58FJ8oTqhvMETqDS9BnTfRiqwaJo9pJDHbB2mEc9gx-lFno17QU_pkKBDQH4P3FZsLPLl1yBwMl7xmFY3_DBxP9hB5Od9W-Ywz5Z206dFVrbW57CFAMT-KcimE3hNFK6alS5QkhisITvgERS6RsaOMmuzGzH1EboVQaRhJA4UAgXaFJRRCBOad9vA3zjzPElsQthJnS1c8SDq_CVEA6d-v4NhM2bc6vDEjEE82XQlBp8fop5p4TMw&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GAtVtgPfBX-JohHACIC5fRsM_GJ6xF1HyCOMhwlsjCGdPJY8ptGaF8bPPiqP6_NOGHRDS1qKGLeQoI9Xd-qKgu9E_bYiHHkzMaWdGigXJfzv8Chw%3D%3D&sa=X&ved=2ahUKEwiytNKG3aaQAxVdyzgGHWGtJTsQk8gLegQIHhAB&ictx=1&stq=1&cs=0&lei=CdrvaKCMFOScg8UP-t7vkQw#ebo=4', '_blank');
+    }
   </script>
 </body>
 </html>
