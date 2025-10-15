@@ -5,157 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ombre - The Nail Bar 💅✨</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap');
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Global Styles */
     body {
-      font-family: 'Poppins', sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #8e2de2, #4a00e0, #ff0080, #00fff0);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff0080, #00ffff);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      overflow: hidden;
+      overflow-x: hidden;
       position: relative;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     h1 {
-      font-family: 'Pacifico', cursive;
+      text-align: center;
+      margin-top: 50px;
       font-size: 3rem;
-      margin-bottom: 20px;
-      text-align: center;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00fff0;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
     }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1000px;
-      margin-bottom: 30px;
-    }
-
     .service-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
+      margin: 20px;
       padding: 20px;
-      margin: 10px;
-      width: 200px;
+      width: 250px;
       text-align: center;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 10px rgba(255,0,255,0.4), 0 0 20px rgba(0,255,255,0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
     }
-
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #ff00ff, 0 0 25px #00fff0;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
     }
-
     .service-card h2 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-bottom: 10px;
-      text-shadow: 0 0 5px #ff00ff, 0 0 10px #00fff0;
     }
-
     .service-card p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
-
-    .contact {
-      max-width: 800px;
+    .service-card .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .contact-info {
       text-align: center;
-      margin-bottom: 70px;
-      line-height: 1.6;
-      text-shadow: 0 0 5px #ff00ff, 0 0 10px #00fff0;
+      margin-top: 50px;
+      font-size: 1.2rem;
     }
-
+    .contact-info a {
+      color: #ff00ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
     .btn {
       position: fixed;
       bottom: 20px;
-      background: linear-gradient(90deg, #ff00ff, #00fff0);
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff00ff, #00ffff);
       border: none;
-      padding: 15px 50px;
-      font-size: 1.3rem;
+      padding: 15px 30px;
+      font-size: 1.5rem;
       color: white;
-      border-radius: 40px;
+      border-radius: 50px;
       cursor: pointer;
-      text-shadow: 0 0 5px #ff00ff, 0 0 10px #00fff0;
-      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00fff0;
-      transition: transform 0.3s, box-shadow 0.3s;
-      z-index: 10;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease;
     }
-
     .btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 30px #ff00ff, 0 0 40px #00fff0;
     }
-
+    /* Glitter Effect */
+    @keyframes glitter {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.5); }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
     .glitter {
       position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255,255,255,0.8);
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 50%;
-      animation: sparkle 3s infinite ease-in-out;
-    }
-
-    @keyframes sparkle {
-      0%,100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.5); }
+      animation: glitter 2s infinite ease-in-out;
     }
   </style>
 </head>
 <body>
+
   <h1>💅✨ Ombre - The Nail Bar ✨💅</h1>
 
   <div class="services">
-    <div class="service-card"><h2>💖 Classic Manicure</h2><p>₹350</p></div>
-    <div class="service-card"><h2>🌸 Gel Polish</h2><p>₹700</p></div>
-    <div class="service-card"><h2>💫 Ombre Nails</h2><p>₹800</p></div>
-    <div class="service-card"><h2>🌈 Nail Extensions</h2><p>₹2200</p></div>
-    <div class="service-card"><h2>🎨 Nail Art</h2><p>₹500</p></div>
-    <div class="service-card"><h2>🦶 Pedicure Spa</h2><p>₹900</p></div>
-    <div class="service-card"><h2>💅 French Tips</h2><p>₹650</p></div>
-    <div class="service-card"><h2>💎 Nail Refills</h2><p>₹900</p></div>
-    <div class="service-card"><h2>🔧 Nail Repair</h2><p>₹400</p></div>
-    <div class="service-card"><h2>✨ Glitter Glam Package</h2><p>₹1200</p></div>
+    <div class="service-card">
+      <h2>💖 Classic Manicure</h2>
+      <p>₹350</p>
+    </div>
+    <div class="service-card">
+      <h2>🌸 Gel Polish</h2>
+      <p>₹700</p>
+    </div>
+    <div class="service-card">
+      <h2>💫 Ombre Nails</h2>
+      <p>₹800</p>
+    </div>
+    <div class="service-card">
+      <h2>🌈 Nail Extensions</h2>
+      <p>₹2200</p>
+    </div>
+    <div class="service-card">
+      <h2>🎨 Nail Art</h2>
+      <p>₹500</p>
+    </div>
+    <div class="service-card">
+      <h2>🦶 Pedicure Spa</h2>
+      <p>₹900</p>
+    </div>
+    <div class="service-card">
+      <h2>💅 French Tips</h2>
+      <p>₹650</p>
+    </div>
+    <div class="service-card">
+      <h2>💎 Nail Refills</h2>
+      <p>₹900</p>
+    </div>
+    <div class="service-card">
+      <h2>🔧 Nail Repair</h2>
+      <p>₹400</p>
+    </div>
+    <div class="service-card">
+      <h2>✨ Glitter Glam Package</h2>
+      <p>₹1200</p>
+    </div>
   </div>
 
-  <div class="contact">
-    📍 <strong>Address:</strong> 3rd floor, Road no 14, Opp. SBI Bank, Venkat Nagar, Banjara Hills, Hyderabad, Telangana, 500034<br>
-    ☎️ <strong>Contact:</strong> 08008787802<br>
-    📸 <strong>Instagram:</strong> <a href="https://instagram.com/ombre_thenailbar" target="_blank" style="color:#ff00ff;text-decoration:underline;">@ombre_thenailbar</a><br>
-    ⭐ <strong>Review here:</strong> <a href="https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=853236ac3d6bce34&q=ombre-the+nail+bar+reviews&uds=AOm0WdHo3GK-IOO1Ns_IroxI67sRPiyW8KJdO66k0DLKccoCk_lx3M_R_7ObloASf_yXXb7-3PhoVBESGA7gORrcmOfH1sgtYwtgui_d9qKB9UuMCokKzL3VzD0fU9SMssohOUBwRTj_YqB3rsrafm1euNMyvWEQPkNbdSGUcMW0BX0o-98UxtHoxUW0jGOh5soQiq7-yakoTFx9ggs03cTeakvFkNWo3dFe8vX5SA7Az58FJ8oTqhvMETqDS9BnTfRiqwaJo9pJDHbB2mEc9gx-lFno17QU_pkKBDQH4P3FZsLPLl1yBwMl7xmFY3_DBxP9hB5Od9W-Ywz5Z206dFVrbW57CFAMT-KcimE3hNFK6alS5QkhisITvgERS6RsaOMmuzGzH1EboVQaRhJA4UAgXaFJRRCBOad9vA3zjzPElsQthJnS1c8SDq_CVEA6d-v4NhM2bc6vDEjEE82XQlBp8fop5p4TMw&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GAtVtgPfBX-JohHACIC5fRsM_GJ6xF1HyCOMhwlsjCGdPJY8ptGaF8bPPiqP6_NOGHRDS1qKGLeQoI9Xd-qKgu9E_bYiHHkzMaWdGigXJfzv8Chw%3D%3D&sa=X&ved=2ahUKEwiytNKG3aaQAxVdyzgGHWGtJTsQk8gLegQIHhAB&ictx=1&stq=1&cs=0&lei=CdrvaKCMFOScg8UP-t7vkQw#ebo=4" target="_blank" style="color:#00fff0;text-decoration:underline;">Click to Review 💫</a>
-  </div>
-
-  <button class="btn" onclick="openLinks()">✨ Service Done 💅✨</button>
-
-  <script>
-    function openLinks() {
-      window.open('https://instagram.com/ombre_thenailbar', '_blank');
-      window.open('https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=853236ac3d6bce34&q=ombre-the+nail+bar+reviews&uds=AOm0WdHo3GK-IOO1Ns_IroxI67sRPiyW8KJdO66k0DLKccoCk_lx3M_R_7ObloASf_yXXb7-3PhoVBESGA7gORrcmOfH1sgtYwtgui_d9qKB9UuMCokKzL3VzD0fU9SMssohOUBwRTj_YqB3rsrafm1euNMyvWEQPkNbdSGUcMW0BX0o-98UxtHoxUW0jGOh5soQiq7-yakoTFx9ggs03cTeakvFkNWo3dFe8vX5SA7Az58FJ8oTqhvMETqDS9BnTfRiqwaJo9pJDHbB2mEc9gx-lFno17QU_pkKBDQH4P3FZsLPLl1yBwMl7xmFY3_DBxP9hB5Od9W-Ywz5Z206dFVrbW57CFAMT-KcimE3hNFK6alS5QkhisITvgERS6RsaOMmuzGzH1EboVQaRhJA4UAgXaFJRRCBOad9vA3zjzPElsQthJnS1c8SDq_CVEA6d-v4NhM2bc6vDEjEE82XQlBp8fop5p4TMw&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GAtVtgPfBX-JohHACIC5fRsM_GJ6xF1HyCOMhwlsjCGdPJY8ptGaF8bPPiqP6_NOGHRDS1qKGLeQoI9Xd-qKgu9E_bYiHHkzMaWdGigXJfzv8Chw%3D%3D&sa=X&ved=2ahUKEwiytNKG3aaQAxVdyzgGHWGtJTsQk8gLegQIHhAB&ictx=1&stq=1&cs=0&lei=CdrvaKCMFOScg8UP-t7vkQw#ebo=4', '_blank');
-    }
-
-    // Create floating glitter
-    for(let i=0;i<50;i++){
-      const glitter=document.createElement('div');
-      glitter.classList.add('glitter');
-      glitter.style.left=Math.random()*100+'vw';
-      glitter.style.top=Math.random()*100+'vh';
-      glitter.style.animationDuration=(2+Math.random()*3)+'s';
-      document.body.appendChild(glitter);
-    }
-  </script>
-</body>
-</html>
+  <div class="contact-info">
+    <p>📍 Address: 3rd Floor, Road No 14, Opp. SBI Bank, Venkat Nagar, Banjara Hills, Hyderabad, Telangana, 500034</p>
+    <p>📞 Contact: 08008787802</p>
+    <p>📸 Instagram: <a href="https://instagram.com/ombre_thenailbar" target="_blank">@ombre_thenailbar</a></p>
+    <p>⭐ Reviews: <a href="https://www.google.com/search?client=ms-android-xiaomi-terr1-rso2&sca_esv=853236ac3d6bce34&q=ombre-the+nail+bar+reviews&uds=AOm0WdHo3GK-IOO1Ns_IroxI67sRPiyW8KJdO66k0DLKccoCk_lx3M_R_7ObloASf_yXXb7-3PhoVBESGA7gORrcmOfH1sgtYwtgui_d9qKB9UuMCokKzL3VzD0fU9SMssohOUBwRTj_YqB3rsrafm1euNMyvWEQPkNbdSGUcMW0BX0o-98UxtHoxUW0jGOh5soQiq7-yakoTFx9ggs03cTeakvFkNWo3dFe8vX5SA7Az58FJ8oTqhvMETqDS9BnTfRiqwaJo9pJDHbB2mEc9gx-lFno17QU_pkKBDQH4P3FZsLPLl1yBwMl7xmFY3_DBxP9hB5Od9W-Ywz5Z206dFVrbW57CFAMT-KcimE3hNFK6alS5QkhisITvgERS6RsaOMmuzGzH1EboVQaRhJA4UAgXaFJRRCBOad9vA3zjzPElsQthJnS1c8SDq_CVEA6d-v4NhM2bc6vDEjEE82XQlBp8fop5p4TMw&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1GAtVtgPfBX-JohHACIC5fRsM_GJ6xF1HyCOMhwlsjCGdPJY8ptGaF8bPPiqP6_NOGHRDS1qKGLeQoI9Xd-qKgu9E_bYiHHkzMaWdGigXJfzv8Chw%3D%3D&sa=X&ved=2ahUKEwiytNKG3aaQAxVdyzgGHWGtJTsQk8gLegQIHhAB&ictx=1&stq=1&cs=0&lei=CdrvaKCMFOScg8UP-t7vkQw#ebo=4" target
+::contentReference[oaicite:0]{index=0}
+ 
